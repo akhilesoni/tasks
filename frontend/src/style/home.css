@@ -1,0 +1,52 @@
+.intro_container{
+    margin: 128px 20px 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro_logo{
+    width: 120px;
+    border-radius: 10px;
+    margin: auto;
+}
+.intro_text{
+    font-size: 48px;
+    margin: 48px 0 0 0 ;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.intro_second{
+    font-size: 30px;
+    margin: 16px 0 56px 0 ;
+
+
+}
+.homesignin{
+    margin: auto;
+}
+
+.signinbutton{
+    border: 1px solid var(--border_light);
+    display: flex;
+    width: fit-content;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.signinbutton:hover{
+    background-color: var(--back_blue);
+    border: 1px solid var(--border_blue);
+}
+
+.signintext{
+    margin: auto;
+    color: var(--primary);
+}
+
+.googleicon{
+    margin: auto 10px auto auto;
+}

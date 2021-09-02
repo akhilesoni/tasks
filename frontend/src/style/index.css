@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope';
+}
+
+:root{
+    --primary:#4285F4;
+    --border_light:rgb(231, 231, 231);
+    --border_blue:#b5d1ff;
+    --back_blue:#f6f8f9;
+    --green:#0F9D58;
+    --yellow:	#F4B400;
+    --red:#DB4437;
+    --shadow:rgba(0, 0, 0, 0.041);
+}

@@ -1,0 +1,106 @@
+.board{
+    margin-top: 20px;
+    display: flex;
+
+}
+
+.board_head{
+    margin-top: 64px;
+    padding: 7px 20px;
+    display: flex;
+    background-color: #4285F4;
+    color: black;
+    cursor: pointer;
+}
+.board_head:hover{
+    background-color: #5d96f3;
+}
+.board_name{
+    margin: 0;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    
+
+}
+
+.board_name:hover{
+    color: #4285F4;
+}
+
+.lists{
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+    margin: 0px auto;
+}
+
+.board_delete{
+    width: 25px;
+    margin: 3px 10px;
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+
+}
+
+.board_delete:hover{
+    background-color: rgba(255, 255, 255, 0.322);
+}
+
+
+
+.add_icon{
+    cursor: pointer;
+    width: 18px;
+    padding: 16px 0;
+    position: absolute;
+    border-radius: 50%;
+    right: 20px;
+}
+
+.add_board{
+    height: 50px;
+    border-radius: 0 25px 25px 0;
+    position: relative;
+    background-color: var(--back_blue);
+}
+.board_input{
+    left: 20px;
+    border: 0;
+    outline: none;
+    height: 100%;
+    background-color: transparent;
+    font-family: 'Manrope';
+    position: absolute;
+}
+
+.drop_icon{
+    width: 18px;
+    margin: auto 10px;
+}
+
+.bars{
+    margin: auto 0px auto auto;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.bars:hover .bar{
+    background-color: rgb(93, 93, 93);
+    cursor: pointer;
+}
+
+.bar{
+    width: 18px ;
+    height: 2px;
+    background-color: gray;
+    margin: 4px;
+    cursor: pointer;
+}
+.version{
+    color: gray;
+    font-size: 14px;
+    text-align: center;
+}

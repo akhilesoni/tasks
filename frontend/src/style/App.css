@@ -1,0 +1,19 @@
+.loading{
+    display: flex;
+}
+
+.loader{
+    width: 70px;
+    margin: 50px auto;
+    height: 70px;
+    border: 10px solid var(--primary);
+    border-radius: 50%;
+    border-top: 10px solid var(--back_blue);
+
+    animation: rotating 1s linear infinite;
+}
+
+@keyframes rotating {
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+  }
