@@ -14,6 +14,7 @@ import DeleteTask from "./DeleteTask"
 import DeleteList from "./DeleteList"
 
 import AddBoard from "./AddBoard"
+import CheckButton from "./CheckButton";
 
 export default class DashboardCom extends Component{
     constructor(props){
@@ -134,6 +135,26 @@ export default class DashboardCom extends Component{
         })
         console.log('list deleted')
     }
+    taskCompleted(boardIndex,listIndex,taskIndex){
+        console.log("task completd")
+        fetch('http://localhost:8000/task_completed',{
+            method: 'POST',
+            body: JSON.stringify({
+                token:localStorage.getItem('token'),
+                boardIndex:boardIndex,
+                listIndex:listIndex,
+                taskIndex:taskIndex
+
+            }),
+            headers: {
+              'Content-Type': 'application/json'
+            }            
+        }).then(res=>res.json()).then((data)=>{
+            this.setState({
+                user:data.user
+            })    
+        })
+    }
     render(){
         if(this.state.user===null){
             return (
@@ -142,13 +163,12 @@ export default class DashboardCom extends Component{
             </div>
             )
         }
-        
         return (
             <div>
-                <DashNav user={this.state.user}/>
+                <DashNav history={this.props.history} user={this.state.user}/>
                 <div onClick={this.toggleSideNav.bind(this)} className='board_head'>
                     <img onClick={this.deleteBoard.bind(this)} src={delete_icon_w} alt="iocn" className='board_delete'/>
-                    <p className='board_name'>{this.state.user.boards[this.state.boardIndex].title}</p>
+                    <p className='board_name'>Current Board : {this.state.user.boards[this.state.boardIndex].title}</p>
                 </div>
 
                 <div onClick={this.toggleSideNav.bind(this)} className={this.getCoverClass()}></div>
@@ -178,7 +198,7 @@ export default class DashboardCom extends Component{
                             return(
                                     <div className='list'>
                                         <div className='list_head'>
-                                            <p className='list_title'>{list.title}</p>
+                                            <p className='list_title'> {list.title}</p>
                                             <DeleteList
                                                 boardIndex={this.state.boardIndex} 
                                                 listIndex={this.state.user.boards[this.state.boardIndex].lists.indexOf(list)} 
@@ -193,9 +213,13 @@ export default class DashboardCom extends Component{
                                                 
                                                 return (
                                                     <div className='task'>
-                                                        <div className='checkbox'>
-                                                            <div className='right'></div>
-                                                        </div>
+                                                        <CheckButton
+                                                            status={task.status}
+                                                            boardIndex={this.state.boardIndex} 
+                                                            taskIndex={list.tasks.indexOf(task)} 
+                                                            listIndex={this.state.user.boards[this.state.boardIndex].lists.indexOf(list)} 
+                                                            taskCompleted={this.taskCompleted.bind(this)}
+                                                            />
                                                         <p className='task_title'>{task.title}</p>
                                                         <DeleteTask 
                                                             boardIndex={this.state.boardIndex} 
@@ -207,7 +231,6 @@ export default class DashboardCom extends Component{
                                             })}
                                         </div>
                                         
-                                        <p className='completed_head'>Completed(0   )</p>
                                     </div>
                                 )
                         })}

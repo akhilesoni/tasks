@@ -4,6 +4,10 @@ import { Redirect } from 'react-router-dom';
 import logo from '../images/logo.svg'
 import GoogleSignIn from "../components/GoogleSignIn";
 import '../style/home.css'
+import tab from '../images/tab.png'
+import mob from '../images/mob.png'
+import laptop from '../images/lap.png'
+
 export default class Home extends Component{
     constructor(props){
         super(props)
@@ -22,6 +26,28 @@ export default class Home extends Component{
                     <p className='intro_second'>A Desktop app for Your Tasks</p>
                     <div className='homesignin'>
                         <GoogleSignIn history={this.props.history}/>
+                    </div>
+                </div>
+
+                <div className='resp'>
+                    
+                    <div className='img_con'>
+                        <img src={tab} alt="" className='tab'/>
+                        <img src={mob} alt="" className='mob'/>
+                        <img src={laptop} alt="" className='laptop'/>
+                    </div>
+                    <p className='resp_head'>Responsive Design</p>
+                   
+                </div>
+
+                <div className='footer'>
+                    <p className='footer_head'>Get Started with Tasks</p>
+                    <div className='homesignin'>
+                        <GoogleSignIn history={this.props.history}/>
+                    </div>
+                    <div className='contact'>
+                        <p className='myname'>Made by Akhlesh soni</p>
+                        <p className='button'>Contact</p>
                     </div>
                 </div>
             </div>

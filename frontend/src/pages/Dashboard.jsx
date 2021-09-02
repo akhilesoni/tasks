@@ -16,7 +16,7 @@ export default class Dashboard extends Component{
     render(){
         return (
             <div>
-                <DashboardCom/>
+                <DashboardCom history={this.props.history}/>
             </div>
         )
     }
