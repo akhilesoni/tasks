@@ -25,7 +25,7 @@ export default class AddTask extends Component{
   
     handleSubmit = (event)=>{
         event.preventDefault()
-        fetch('http://localhost:8000/tasks',{
+        fetch('https://radiant-headland-93088.herokuapp.com/tasks',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token'),

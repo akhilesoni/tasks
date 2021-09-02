@@ -26,7 +26,7 @@ export default class AddList extends Component{
             return
         }
         console.log("addlist"+this.state.boardIndex)
-        fetch('http://localhost:8000/lists',{
+        fetch('https://radiant-headland-93088.herokuapp.com/lists',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token'),

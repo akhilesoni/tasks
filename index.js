@@ -22,7 +22,7 @@ app.use(cors())
 
 
 //database connections
-const url = "mongodb+srv://akhlesh:mangoakhlesh@cluster0.play8.mongodb.net/mydatabase?retryWrites=true&w=majority";
+const url = process.env.DB_URL;
 const connectionParams={
     useNewUrlParser: true,
     useCreateIndex: true,

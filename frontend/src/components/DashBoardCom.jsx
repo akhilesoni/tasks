@@ -26,7 +26,7 @@ export default class DashboardCom extends Component{
         }
     }
     componentDidMount(){
-        fetch('http://localhost:8000/getcurrentuser',{
+        fetch('https://radiant-headland-93088.herokuapp.com/getcurrentuser',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token')
@@ -80,7 +80,7 @@ export default class DashboardCom extends Component{
         }
     }
     deleteBoard(){
-        fetch('http://localhost:8000/board_delete',{
+        fetch('https://radiant-headland-93088.herokuapp.com/board_delete',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token'),
@@ -98,7 +98,7 @@ export default class DashboardCom extends Component{
     }
     deleteTask(boardIndex,listIndex,taskIndex){
         
-        fetch('http://localhost:8000/task_delete',{
+        fetch('https://radiant-headland-93088.herokuapp.com/task_delete',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token'),
@@ -118,7 +118,7 @@ export default class DashboardCom extends Component{
     }
     deleteList(boardIndex,listIndex){
         
-        fetch('http://localhost:8000/list_delete',{
+        fetch('https://radiant-headland-93088.herokuapp.com/list_delete',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token'),
@@ -137,7 +137,7 @@ export default class DashboardCom extends Component{
     }
     taskCompleted(boardIndex,listIndex,taskIndex){
         console.log("task completd")
-        fetch('http://localhost:8000/task_completed',{
+        fetch('https://radiant-headland-93088.herokuapp.com/task_completed',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token'),

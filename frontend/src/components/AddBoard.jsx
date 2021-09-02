@@ -17,7 +17,7 @@ export default class AddBoard extends Component{
   
     handleSubmit = (event)=>{
         event.preventDefault()
-        fetch('http://localhost:8000/boards',{
+        fetch('https://radiant-headland-93088.herokuapp.com/boards',{
             method: 'POST',
             body: JSON.stringify({
                 token:localStorage.getItem('token'),
